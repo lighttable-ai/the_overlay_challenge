@@ -1,0 +1,37 @@
+[project]
+name = "api"
+version = "0.1.0"
+description = "Fast API backend for overlay demo app"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    "fastapi>=0.115.12",
+    "httpx>=0.28.1",
+    "opencv-python-headless>=4.11.0.86",
+    "python-multipart>=0.0.20",
+]
+
+[dependency-groups]
+dev = [
+    "uvicorn>=0.34.2",
+    "pyright>=1.1.400",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "ruff>=0.11.7",
+    "pillow>=11.2.1",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+exclude = ["venv", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "auto"
+
+[tool.pyright]
+exclude = ["venv", ".venv"]
